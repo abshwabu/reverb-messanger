@@ -18,9 +18,12 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        'avatar',
         'name',
         'email',
+        'email_verified_at',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -45,4 +48,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function group()
+    {
+        return $this->blongsToMany(Group::class, 'group_user');
+    }
+
+    
 }
