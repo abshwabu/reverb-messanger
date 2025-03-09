@@ -12,7 +12,7 @@ class Message extends Model
         'message',
         'sender_id',
         'group_id',
-        'reciever_id',
+        'receiver_id',
     ];
 
     public function sender()
@@ -27,7 +27,7 @@ class Message extends Model
 
     public function reciever()
     {
-        return $this->belongsTo(User::class, 'reciever_id');
+        return $this->belongsTo(User::class, 'receiver_id');
     }
 
     public function attachments()

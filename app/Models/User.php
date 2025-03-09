@@ -49,9 +49,9 @@ class User extends Authenticatable
         ];
     }
 
-    public function group()
+    public function groups()
     {
-        return $this->blongsToMany(Group::class, 'group_user');
+        return $this->blongsToMany(Group::class, 'group_users');
     }
 
     
